@@ -28,7 +28,7 @@ dependencies {
 jar {
     manifest {
         attributes(
-                "Premain-Class": "me.zero.tcpath.PatcherAgent",
+                "Premain-Class": "me.zero.tcpatcher.PatcherAgent",
         )
     }
 }
