@@ -1,0 +1,34 @@
+group 'me.zero'
+version '1.0'
+
+buildscript {
+    repositories {
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'javassist:javassist:3.12.1.GA'
+}
+
+jar {
+    manifest {
+        attributes(
+                "Premain-Class": "me.zero.tcpath.PatcherAgent",
+        )
+    }
+}
